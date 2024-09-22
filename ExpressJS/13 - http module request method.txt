@@ -1,0 +1,7 @@
+fama de http module request w eli houma teb3in server express ok , 
+w eli houma 5 fonction (get,post,put,patch,delete) eli fonction 'all' hiya 3ibara 
+3le somme mta3ohm .
+
+behi 3lech men7outch 'all' w beli merte7.Pb: 5ater ki bech tposti lcode mt3k l we7ed 
+yelzemek tu spécifie fonction eli ista3mltha bech yefhmek fech 9a3ed ta3mel 
+bthabet ok .

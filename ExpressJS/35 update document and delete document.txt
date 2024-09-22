@@ -1,0 +1,4 @@
+behi lina bech net3almou updateone , updatemany , deleteone ,deletemany 
+
+rahou fekra bark od5el site mongoose wella w3school w ataw tel9a tous les fonctions eli tnejem testa3malhom
+fi documents 

@@ -1,0 +1,33 @@
+morgan howa package nsoboh bech i3awehna fi fehmen les  informations telles que la méthode HTTP,
+ le chemin, le code de réponse, le temps de réponse, etc.  fi terminel 
+
+Donc nsoubouh fi devdependecies : npm i morgan -D 
+const logger = require('morgan')
+
+app.use(logger('tiny')) : lena formats de journalisation (logging)  'tiny'
+ne5thou quelque format : resultat(cmd)
+combined: ::1 - - [01/Jan/2023:12:34:56 +0000] "GET /example HTTP/1.1" 200 1234
+common: ::1 - - [01/Jan/2023:12:34:56 +0000] "GET /example HTTP/1.1" 200 1234
+dev: GET /example 200 5.123 ms - 1234
+short: [01/Jan/2023:12:34:56 +0000] "GET /example" 200
+tiny: GET /example 200 - 1234
+
+CODE : 
+const express = require("express");
+const app = express();
+const path = require('path')
+const logger = require('morgan')
+
+app.use(logger('tiny'))
+
+app.set('view engine','ejs')
+app.set('views','views')
+
+app.use(express.static(path.join(__dirname,'assets')))
+app.get('/About',(req,res)=>{
+      res.render('index',{Name:"Ali"})
+})
+
+app.listen(5220,()=>{
+    console.log("Server is run")
+})

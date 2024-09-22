@@ -1,0 +1,6 @@
+exemple : 4.17.1 : major.minor.patch
+
+^4.17.1 : ma3neha ki t7eb te5ou project mt3i yelzem 4.*.*
+~4.17.1 : ma3neha ki t7eb te5ou project mt3i yelzem 4.17.*
+Rq : t7eb tsob project mt3 wrhed ta5ou package.json kima howa w ba3d ta3mel npm install
+ataw i7abtlk version kima houma

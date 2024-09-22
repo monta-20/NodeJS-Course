@@ -1,0 +1,13 @@
+Server Side Rending(SSR) :
+howa enou ki t7eb ta3mel affichahe 3le browser tab3th réquete li server exemple
+facebook.com howa server yemchi iconnecte DB w ya3mel tous le page wa7dou
+mt3 html,css,js w yab3athha lel browser ok.
+
+Client Side Rending(CSR) :
+howa 3ibara MVC fama backend(server) eli fih link /profil ... w frontend eli fih component
+(css,html,js)w DB w client eli 7ajtou bel page 
+
+Idéé Single Page Interface(SPI):
+hiya eli yet5dmou bel angular,react .... ma3nha ki ta3mel traitement page me ta3mlech reload
+traitement enregistre fi DB sans reload page kima sigin up
+  

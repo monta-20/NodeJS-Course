@@ -1,0 +1,25 @@
+kima 9olna nesta3mlou body-parser bech data tjina sous forme object not string bech
+nejmou net3amlou m3ahehea ba3d.
+
+fi vidéo 3te explain why we use body parser kifch tjina data uncoding fi buffer de plus met9at3aa
+
+Avis : rahou bodyParser m3adech mesta3mel taw 
+
+sol: 
+
+const express = require("express");
+const app = express();
+
+// Middleware pour analyser le corps des requêtes POST au format JSON
+app.use(express.json());
+
+// Middleware pour analyser le corps des requêtes POST au format URL encodé
+app.use(express.urlencoded({ extended: true }));
+
+// Vos routes et gestionnaires de requêtes viendraient après
+
+app.listen(3000, () => {
+    console.log("Le serveur fonctionne sur le port 3000");
+});
+
+5ali wa7da t7eb data json wella encodé

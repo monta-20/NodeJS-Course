@@ -1,0 +1,38 @@
+behi awel 7aja client w server⁭ échange de message me binethom data tkoun 3le 4 type
+w eli houma string,XML,HTML,JSON w achharhom hiya JSON.
+
+ay language de programmation , frontend , backend rahou JSON incluée fih par défaut ok
+
+JSON tet3aml ye OBJECT w ila ARRAY OF OBJECT 
+
+OBJECT:
+const profil = {
+    "key1": "value1",
+    "key2": "value2",
+    "key3": "value3"
+}
+ARRAY OF OBJECT 
+const students = [
+    {
+        name: "Alice",
+        age: 22,
+        grade: "A"
+    },
+    {
+        name: "Bob",
+        age: 20,
+        grade: "B"
+    },
+    {
+        name: "Charlie",
+        age: 21,
+        grade: "C"
+    }
+];
+
+3andha 2 fonctons w elli houma:
+.JSON.stringify() method to convert a JavaScript object into a JSON string.
+.JSON.parse() method to convert a JSON string into a JavaScript object :
+rahou type string wa7id eli nejmou net3amlou m3ah with function parse() howa kima
+haka ok : '{"name": "John", "age": 30}'
+ 

@@ -1,0 +1,16 @@
+Node modules : howa souwe9 eli fih material lkol eli ne5dmou bih (ay install tetsab directement 5adi)
+
+fi package.json ay install tji ye fi  Dependencies (dependencies) or Development Dependencies (devDependencies):
+
+Dependencies (dependencies): howa eli fih package comme express.js w morgan.... , meleker eli bech yab9a ba3d deployement de project ma3neha base eli 7ajti bih bech
+nebni project.
+syntaxe : 
+    npm install package-name
+
+
+Development Dependencies (devDependencies): howa eli bech nsta3mlou just l developement mt3 project comme 
+testing frameworks (like Mocha), build tools (like Webpack), and code analysis tools (like ESLint) w nodemno 
+syntaxe:
+     npm install package-name -D
+
+site mt3 sou9 howa : npmjs.com

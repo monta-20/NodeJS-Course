@@ -1,0 +1,6 @@
+behi lena 7ke 3le fonctions w properties eli mawjoudin request and response objects
+w elli express 3mlt idhafa 3le server http
+
+sehel barcha eli il suffit tod5el l site expressjs w tekteb fi search request wella response
+ataw yatl3oulk tous fonctions w properties ok.
+

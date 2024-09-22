@@ -1,0 +1,60 @@
+developement how aenou project mezel 3le mon PC blou5a o5ra url:localhost:5220/...
+
+Production howa eni chrit DNS w nejem npartagi site mta3i m3a s7abi ok.
+
+W nejma zeda n7ot projet en mode Test
+
+fama variable eli bech i9olena ena taw fi ena cas w eli howa :app.get('env') ya3tina
+ye mode dev ou prod 
+
+behi enti ki tji ta3mel déployement ataw tjik cas t7ot feha mode et production
+
+behi l7keya hethi t3awen fi espace eli ay 7keya bech nesta3mlha fi devdependecies 
+nweli na3mleleha if :
+if(app.get('env')=="development"){
+    app.use(logger('tiny'))
+} 
+
+CODE :
+const express = require("express");
+const app = express();
+const path = require('path')
+const logger = require('morgan')
+
+if(app.get('env')=="development"){
+    app.use(logger('tiny'))
+} 
+app.get('/',(req,res)=>{
+    res.send(app.get('env'))
+})
+
+
+app.listen(5220,()=>{
+    console.log("Server is run")
+})
+
+
++Information : 
+Pour définir la valeur de NODE_ENV, vous pouvez l'attribuer directement lors
+de l'exécution de votre application ou de vos scripts, par exemple :
+code: 
+# Environnement de développement
+NODE_ENV=development node app.js
+
+# Environnement de production
+NODE_ENV=production node app.js
+
+# Environnement de test
+NODE_ENV=test node test.js
+
+Dans votre application Node.js, vous pouvez accéder à la valeur de NODE_ENV
+à l'aide de process.env.NODE_ENV. Par exemple :
+
+code:
+if (process.env.NODE_ENV === 'development') {
+    // Code de débogage
+} else if (process.env.NODE_ENV === 'production') {
+    // Code de production
+} else if (process.env.NODE_ENV === 'test') {
+    // Code de test
+}

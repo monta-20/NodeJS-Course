@@ -1,0 +1,90 @@
+behi men loul bech na7kio 3le différence les méthodes HTTP GET, POST, PUT, PATCH et DELETE
+
+hetha chatgpt chnowa 9al : 
+
+GET :
+
+Utilisé pour récupérer des données à partir du serveur.
+Les requêtes GET sont généralement utilisées pour lire des données, comme afficher une page web ou obtenir des informations d'une base de données.
+Les données sont envoyées dans l'URL sous forme de paramètres de requête (query parameters).
+POST :
+
+Utilisé pour envoyer des données au serveur afin de créer de nouvelles ressources.
+Les requêtes POST sont utilisées lorsque vous souhaitez soumettre un formulaire en ligne ou envoyer des données à un serveur pour traitement.
+Les données sont envoyées dans le corps de la requête, ce qui les rend plus adaptées pour l'envoi de données sensibles ou importantes.
+PUT :
+
+Utilisé pour mettre à jour une ressource existante sur le serveur.
+Les requêtes PUT sont généralement utilisées pour remplacer complètement une ressource par de nouvelles données.
+Vous devez inclure toutes les données nécessaires pour décrire entièrement la ressource mise à jour dans le corps de la requête.
+PATCH :
+
+Utilisé pour effectuer des mises à jour partielles sur une ressource existante.
+Les requêtes PATCH sont utilisées lorsque vous ne souhaitez mettre à jour qu'une partie spécifique d'une ressource, sans affecter le reste des données.
+Vous incluez uniquement les champs que vous souhaitez mettre à jour dans le corps de la requête.
+DELETE :
+
+Utilisé pour supprimer une ressource du serveur.
+Les requêtes DELETE sont utilisées lorsque vous souhaitez supprimer une ressource spécifique.
+Aucune donnée n'est généralement incluse dans le corps de la requête, car vous spécifiez la ressource à supprimer dans l'URL.
+--------------------------------------------------------
+henou bech ne5thou exemple :
+
+app.get('/',(req,res,next)=>{
+    res.send('<form action="/form" method="POST"><input type="text" name="firstname"/><button type="submit"> send</button></form>')
+
+})
+
+app.post('/form',(req,res,next)=>{
+    
+})
+
+kima 9al 3mek chatgpt ki bech tab3th formulaire 3lik bel post , lena : <form action="/form" method="POST"><input type="text" name="firstname"/><button type="submit"> send</button></form>
+method="POST" :  ma3neha rahou client bech iposti data 
+action="/form" : ki ba3th data bel POST METHOD win bech yab3tha fi /form fi url ok
+
+behi data ki bech yab3thha bechi tjini de caractére séparee donc nestamlou (body-parser) bech nchoufouha 3le page btari9a object ok
+
+install : mpn i body-parser men npmjs site
+
+déf : pour analyser les données du corps des requêtes HTTP, en particulier les données envoyées dans les requêtes POST, PUT et PATCH. 
+
+behi kil3ada import module : const  bodyParser =require("body-parser")
+
+w ki bech te5dem bih t7ot juste paramétre fi app.post kima haka : app.post('/form',bodyParser,(req,res,next)=>{
+      console.log(req.body)
+      res.end()
+})
+req.body : iraj3elna text eli fi champ form 
+ama fama probléme w eli howa : fi console ijina message i9olelna :
+body-parser deprecated bodyParser: use individual json/urlencoded middlewares node_modules\express\lib\router\layer.js:95:5
+body-parser deprecated undefined extended: provide extended option node_modules\body-parser\index.js:104:29
+
+ma3neha me bin a5tar wa7da barka donc bech nfouthiu mochkel na3mlou :
+const bodyParserr =bodyParser.urlencoded({extended:true})
+Rq : ki n7ot app.use(bodyParser) : rahou tous les middelwars(app.) bech ikonou bel body-parser donc eviter sa.  
+Code :
+const express = require("express");
+const bodyParser = require("body-parser");
+const app = express();
+
+const bodyParserr = bodyParser.urlencoded({ extended: true });
+
+//middlewares
+app.get('/', (req, res, next) => {
+    res.send('<form action="/form" method="POST"><input type="text" name="firstname"/><button type="submit">Send</button></form>');
+});
+
+app.post('/form', bodyParserr, (req, res, next) => {
+    const firstName = req.body.firstname; // Use req.body.firstname to match the input field name
+    res.send("First Name: " + firstName);
+});
+
+app.listen(5220, () => {
+    console.log("Server Running On Port 5220");
+});
+
+
+behi ija netfehoumo taw m3adech nestamlou fih bidy-Parser car : 
+à partir d'Express.js version 4.16.0, la plupart de ses fonctionnalités ont été intégrées dans le noyau d'Express, ce qui signifie que vous n'avez plus
+besoin d'installer body-parser séparément dans les nouvelles versions d'Express.

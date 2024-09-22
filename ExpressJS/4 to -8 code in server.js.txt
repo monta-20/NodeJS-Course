@@ -1,0 +1,35 @@
+//in file package.json : this is main file after you create with cmd (npm init)
+//you must to create server.js.
+//2rd
+//create this package avec cmd : npm init and remplir 
+//3rd : create Server Node JS 
+
+const http = require('http')
+
+const server = http.createServer((req,res)=>{
+    //4rd : two first ligne 
+    // res.statusCode = 404 // liste of stauts code : https://en.wikipedia.org/wiki/List_of_HTTP_status_codes
+    // res.setHeader('content type','text\html') // liste of content type : https://developer.mozilla.org/fr/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types
+    // res.write("Welcome\n")
+    // res.write("Montassar")
+    // res.end()//is important to apply data in page 
+    //5rd
+    if(req.url =="/home" ){
+        res.write("Welcome to you home")
+        res.statusCode = 200
+    }
+    else if(req.url =="/contact"){
+        res.write("Welcome to you contact")
+        res.statusCode = 200
+    }
+    else {
+        res.write("Not Found")
+        res.statusCode = 404
+    }
+    res.end()
+})
+server.listen(5520,()=>{console.log('Server is running at port 5520 , Ok')}) //listen at port 5520 and will be executed, and it will log the message "Server is running, Ok" to the console.
+
+/* to know all port use in your PC (CMD):netstat -ano | findstr LISTENING*/
+
+//4 rd status code and content type must be before code 

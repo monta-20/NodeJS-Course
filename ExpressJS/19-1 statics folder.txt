@@ -1,0 +1,51 @@
+lena bech na3mlou création mt3 folder static ma3enha folder wa9teli 7ajti
+bech na3yet file fi west folder hetha eli suffit nekteb esem file akahaw ok
+exemple file assets fih style.css w main.css n7ebou static
+server.js:
+app.use(express.static(path.join(__dirname,'assets')))
+bech na3yet two fils : 
+<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
+donc just esem no path ok .
+
+Code : 
+server.js :
+const express = require("express");
+const app = express();
+const path = require('path')
+
+app.use(express.static(path.join(__dirname,'assets')))
+app.get('/About',(req,res)=>{
+      res.sendFile(path.join(__dirname,'views','index.html'))
+})
+
+
+
+app.listen(5220,()=>{
+    console.log("Server is run")
+})
+views/index.html :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>Bonjour Mr Montassar BenBrahim</h1>
+    <p>Club Africain (CA)</p>
+</body>
+</html>
+assets/main.css:
+h1{
+    color:aqua;
+    background: red;
+}
+assets/style.css:
+p{
+    color:red;
+    background: wheat;
+}

@@ -1,0 +1,51 @@
+-params: howa eli ijina fi url ba3d /.
+http://example.com/users/123 donc users w 123 sont des params.
+bel expressjs bech nesta3mlou params il suffit : ba3d esem params 
+exemple lena deux params name w id w fonction req.params juste bech iraj3elna 
+params 3le page
+app.get('/About/:name/:id',(req,res)=>{
+    res.send(req.params.name + ' ' +req.params.id)
+})
+
+.Query Params:
+howa eli ijina fi url fih ? w &.
+http://example.com/search?query=express&category=nodejs
+
+bel expressjs na3mlou récupération barka bel fonction : req.query
+app.get('/Home',(req,res)=>{
+            res.send(req.query.id + ' ' + req.query.Name)
+});
+fil url nekteb : http://localhost:5220/Home?id=255&Name=Monta
+yarja3lk fi page : 255 Monta
+
+taw ne5thou exemple iraj3lna fih zouz : 
+app.get('/Contact/:ID',(req,res)=>{
+    res.send(req.params.ID + ' ' + req.query.FirstName + ' ' + req.query.SecondName)
+})
+
+na3tih url : http://localhost:5220/Contact/4555?FirstName=Montasar&SecondName=BenBrahim
+iraj3elna : 4555 Montasar BenBrahim
+
+Code : 
+const express = require("express");
+const app = express();
+
+app.get('/About',(req,res)=>{
+      res.send("Welcome to Your Page")
+})
+
+app.get('/About/:name/:id',(req,res)=>{
+    res.send(req.params.name + ' ' +req.params.id)
+})
+
+app.get('/Home',(req,res)=>{
+    res.send(req.query.id + ' ' + req.query.Name)
+})
+
+app.get('/Contact/:ID',(req,res)=>{
+    res.send(req.params.ID + ' ' + req.query.FirstName + ' ' + req.query.SecondName)
+})
+
+app.listen(5220,()=>{
+    console.log("Server is run")
+})

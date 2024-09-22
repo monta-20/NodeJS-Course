@@ -1,0 +1,71 @@
+kima 9olna 9bal eli fonction use rahi ta9ra content men fou9 lel louta w iteme tenfidh 
+
+les middelwares men fou9 lel louta.
+
+behi 9bal fi server http ki bech na3ml path fi page nesta3ml req.url ="\.." . w m3a express
+jebtelna méthode me 5ir w eli hiye : app.use('/..',(res,req){..}) ma3neha path paramétres 
+fi fonction use .
+
+exemple : //midlewars
+
+app.use('/home',(req,res,next)=>{
+    res.send("Welcome to home page ")
+})
+
+app.use('/contact',(req,res,next)=>{
+    res.send("Welcome to contact page ")
+})
+
+app.use('/Privacy',(req,res,next)=>{
+    res.send("Welcome to privacy page ")
+})
+
+lena kol chy bech yemchi mriguel behi w ki na3ml heka :
+
+app.use('/',(req,res,next)=>{
+    res.send("Welcome to home page ")
+})
+
+app.use('/contact',(req,res,next)=>{
+    res.send("Welcome to contact page ")
+})
+
+app.use('/Privacy',(req,res,next)=>{
+    res.send("Welcome to privacy page ")
+})
+
+lena ayh url bech yemchi l home page kima 9olna 9bal rahou use fonction ta9ra men fou9 lel
+louta . donc ta9ra \ yemchi fi belha eli ayh haja lel home page 
+
+donc soultion hiya fonction all
+
+code : 
+const express = require("express")
+
+const app = express()
+
+//midlewars
+
+const express = require("express")
+
+const app = express()
+
+//midlewars
+
+app.all('/',(req,res,next)=>{
+    res.send("Welcome to home page ")
+})
+
+app.all('/contact',(req,res,next)=>{
+    res.send("Welcome to contact page ")
+})
+
+app.all('/Privacy',(req,res,next)=>{
+    res.send("Welcome to privacy page ")
+})
+
+
+
+app.listen(5220,()=>{
+    console.log("Server Running On Port 5220")
+})

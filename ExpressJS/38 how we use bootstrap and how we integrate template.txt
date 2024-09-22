@@ -1,0 +1,15 @@
+fi vidéo hetha 5the template hadhra w ista3malha directement fi code.
+
+Boostrapp howa juste tod5el li site ta3mel copier coller lel code eli 7ajtek bih
+w les deux link mt3 css w js w t7othom fi html file mt3k.
+
+behi ok integrate template hiya juste tekteb  free.css w ta3mel download li template eli
+7ajtek beha wella tekteb fi google free template "theme" html css.
+
+ta3mel download lel template ba3d ta3mel copier coller lel index.html w tzid files kol
+eli mawjoudin fi tag <link...../>
+
+RQ : kenek 3aml app.use(express.static(path.join(__dirname,"assets")))
+fi server.js ay link lezmek teni assests\ ok.
+
+esem template : sixteen clothing free template

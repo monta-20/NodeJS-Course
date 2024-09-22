@@ -1,0 +1,44 @@
+install : npm i mongodb
+
+Code et expliqation :
+const express = require('express');
+const app = express();
+const mongo = require('mongodb').MongoClient // create module
+
+url="mongodb://localhost:27017" //url when you use mongodb (lena installation 3le PC)
+app.use('/',(req,res)=>{
+    mongo.connect(url,(err,result)=>{
+        if (err) throw err
+        var db=result.db('mytest') //Création DB mytest
+        db.createCollection('users',(err,result)=>{ //Créate Collection users 
+            if(err) throw err
+            else console.log('Collection Created !')
+        })
+    })
+})
+
+app.get('/CreateFields',(req,res)=>{
+           var profile = {username : "Montassar"}
+        mongo.connect(url,(err,result)=>{
+            if (err) throw err
+            else{
+                var db=result.db('mytest')
+                db.createOne(profile,(err,result)=>{ //Create Fields 
+                if(err) throw err
+                else console.log("Field Created !")
+                }    
+
+            })
+        })    
+})
+
+app.listen(5220, () => {
+    console.log(`Serveur en cours d'exécution sur le port 5220`);
+});
+
+ay fonction fi mongodb tfardh 3lik callback function(err,result)=>{}
+
+behi nejmou na3mlou createMany ,updateMany , deleteMany .......
+
+fi Mongodb module fama barcha so3oba fi taa3aml m3a code 3la hethka fama module 
+jdid welli howa mongoose  

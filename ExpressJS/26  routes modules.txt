@@ -1,0 +1,13 @@
+Taw fi 3oudh me kol chy nektbou fi server.js na3mel file routse w norbet kol chy 
+
+behi nji fi file eli bech n7ot fih code mt3 chaqur route :
+const express = require('express');
+const route = express.Router()
+
+w nweli na3mel route.get m3adech app.get ok.
+w fi e5er file module.exports=route bech iweli public fi project nejem n3ayetlou men ay blassa
+
+w fi server.js : juste inclue 
+const studentroute=require("./routes/routestudents")
+
+app.use(studentroute)

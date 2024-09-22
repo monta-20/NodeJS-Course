@@ -1,0 +1,55 @@
+hiya opération asynchrone traj3elna réussite ou l'échec de l'operation.
+
+nesta3mlouha bech néviter callbacks en cascade kima setinterval.
+
+hetha exemple : 
+
+const myPromise = new Promise((resolve, reject) => {
+    // Opération asynchrone (simulée ici avec setTimeout)
+    setTimeout(() => {
+        const success = true; // Indique si l'opération a réussi ou échoué
+        if (success) {
+            resolve("Résultat de l'opération réussie");
+        } else {
+            reject("Erreur : L'opération a échoué");
+        }
+    }, 2000); // Une opération simulée qui prend 2 secondes
+});
+
+myPromise
+    .then((result) => {
+        console.log(result); // Résultat de l'opération réussie
+    })
+    .catch((error) => {
+        console.error(error); // Erreur : L'opération a échoué
+    });
+
+behi resolve, reject houma 2 params eli fi function ma3neha ye succes ye failed
+ba3d ne5dem code mt3i 3adi w nraj3 fi resolve w reject resultat eli hajti beha
+et finallement Accès aux Résultats :
+.then() est utilisé pour traiter le résultat lorsque la Promise est "resolved".
+.catch() est utilisé pour traiter une erreur lorsque la Promise est "rejected".
+
+------------------------------------------------------------------------------------------------------------------------
+
+behi rakez m3aya mli7 rahi men ahame 7ajet hiya Promise fonction 5ater DB , API ,..
+accées lehoum ikoun bi Promise fonction (5aterhoum asynchrounse) behi hetha 
+syntaxe génerale :
+
+const myPromise = new Promise((resolve, reject) => {
+  // Code asynchrone à exécuter ici -- lena fi étape pending ma3neha na7dher task eli n7eb na3mlou
+
+  // Si l'opération réussit, appelez resolve avec le résultat
+  // resolve(result);--'result' peut être n'importe quelle valeur ou objet que vous souhaitez renvoyer.
+
+  // Si l'opération échoue, appelez reject avec une erreur
+  // reject(error);
+});
+
+myPromise.then((result) => {
+  // Gérer le résultat en cas de réussite
+}).catch((error) => {
+  // Gérer l'erreur en cas d'échec
+});
+
+rahi result howa eli 7ajtek bih fi Promise founction

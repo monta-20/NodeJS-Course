@@ -1,0 +1,23 @@
+lena bech na3mlou juste fonction find w elli hiya mt3 read behi kima na3rfou el promise 
+function houma eli fehom .then(()=>{...}) .
+ki na3mel fonction find w ba3d ay fonction yemchi compilateur icompile fonction eli ba3d
+find me5ir me icompili find 3le 5ater code JS Asynchronuse donc ichouf eli ye5ou wa9et 
+a9al w ye5dmou 
+donc solution w illi hiya await 9bal men ne5dem find w nenswech zeda asyn juste 9bal
+esem function 
+ceca code : 
+app.use('/ReadFeilds',(req,res)=>{
+    mongosse.connect(url,{useNewUrlParser:true,useUnifiedTopology:true}).then(async(res)=>{
+        await  Student.find((err,docs)=>{ //kima nchoufo docs houma feilds
+//await 9bal function
+            console.log(docs)
+        })
+        mongoose.disconnect().then(()=>{console.log(" Disconnected !")}) //promise 5ater fama then
+    })
+})
+
+
+RQ : 
+findOne : Cette fonction permet de trouver un seul document qui correspond à un critère donné. Elle renvoie le premier document correspondant trouvé.
+
+findById : Utilisée pour trouver un document par son identifiant (_id).

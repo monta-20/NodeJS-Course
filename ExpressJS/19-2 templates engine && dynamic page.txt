@@ -1,0 +1,60 @@
+Idea : behi ki ne5dlou page html rahi static page ma3neha nektbou faha juste texte
+me nejmoch na5thoiu data me DB w nab3thouha 3le tarik html 
+sol : hiya DOM el badeltena kol chy wellina nejmou nab3thou data men DB we illa eli howa
+<div id="...">Data</div>
+
+ama fi node js me temchich hethika donc chniya solution .(rahou nejmou na3mlou <script src=...></script>
+ama 7jetna directement nab3thou men file server.js)
+
+solution hiya template engine.
+men achher anwe3 les sites  mt3 template engine :EJS ,Handlebars,Jade template engine
+
+a7an bech nesta3mlou ejs.co 5atrou ashel fi syntax : <%= variable %>
+
+npm i ejs : installation
+
+app.set('view engine', 'ejs') : sgnifie que votre application utilisera le moteur de modèle EJS (Embedded JavaScript)
+app.set('views', 'views') : signifie que les fichiers de modèle EJS doivent être stockés dans un répertoire nommé "views"
+à la racine de votre projet.(ma3ehan kenk msemi file eli fih index.html Htmlfile donc app.set('views', 'Htmlfile') .
+
+temchi tbasel index.html to index.ejs 
+
+res.render() pour afficher une vue, Express cherchera automatiquement les fichiers de modèle dans le répertoire
+ spécifié (dans ce cas, "views").
+      res.render('index',{Name:"Ali"})
+w temchi lel insex.ejs juste ta3mel : <%= Name %>
+
+Code : 
+server.js : 
+const express = require("express");
+const app = express();
+const path = require('path')
+
+app.set('view engine','ejs')
+app.set('views','views')
+
+app.use(express.static(path.join(__dirname,'assets')))
+app.get('/About',(req,res)=>{
+      res.render('index',{Name:"Ali"})
+})
+
+app.listen(5220,()=>{
+    console.log("Server is run")
+})
+views/index.ejs:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <h1>Bonjour Mr Montassar BenBrahim</h1>
+    <p>Club Africain (CA)</p>
+    <%= Name %>
+</body>
+</html>
+

@@ -1,0 +1,9 @@
+SQL:
+howa des tables kol table yetkawen men colonnées w lignes w liées m3a b3athom 
+par clé étranger w clé primaire.
+NOSQL:
+yekawen men majmo3aa men collections fi west kol collection fama des documents
+w kol document yetkawen men majmo3aa men feilds ,feilds eli feha propéreites=value
+3ibara net3amlou m3a object
+RQ: .raho tnejem collections fi west collections w documents fi west documents ...
+        .kol document 3andou id_ par défaut

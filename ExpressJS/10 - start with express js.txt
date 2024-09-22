@@ -1,0 +1,26 @@
+express mebini 3le mojmo3a men midellwares ytem tenfidh midellwares hethom ki ijina request men 3and client 
+leken btari9ra montathma men awel middelware li e5er (men fou9 lel louta )
+
+pour create un middelware : 
+
+const express = require("express")
+
+const app = express()
+
+//midlewars
+
+app.use((req,res,next)=>{
+    console.log("Welcome to my website")
+     next() // 1ére middelware
+})
+
+app.use((req,res)=>{
+    console.log("Welcome to my website") // 2end middelware
+})
+
+app.listen(5220,()=>{
+    console.log("Server Running On Port 5220")
+})
+
+//next() mohema ki yebda 3ana akther men middelware ok 5ater me yta3da lel middelware 
+eli ba3dha ela bi next()

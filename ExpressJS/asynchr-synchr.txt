@@ -1,0 +1,43 @@
+.asynchrone ma3neha code lire btari9a 5ayer tezemoniya 
+.synchrone ma3neha code lire btari9a  tezemoniya 
+
+setTimeout et setInterval sont des fonctions asynchrones en JavaScript.
+Cela signifie que lorsqu'elles sont utilisées, elles programment l'exécution
+de code à un moment futur plutôt que de bloquer immédiatement l'exécution
+du programme.
+
+Callbacks : Les fonctions asynchrones peuvent accepter une fonction de rappel
+(callback) qui sera exécutée lorsque l'opération est terminée.kima setinterval.
+
+
+setTimeout :
+
+La fonction setTimeout permet de retarder l'exécution d'une fonction ou d'un morceau
+de code après un délai spécifié en millisecondes.
+Elle prend deux arguments : la fonction à exécuter et la durée du délai.
+Après le délai écoulé, la fonction spécifiée est ajoutée à la file d'attente des tâches à
+exécuter.
+Voici un exemple :
+javascript
+Copy code
+setTimeout(() => {
+    console.log("Ce message s'affiche après 2 secondes.");
+}, 2000); // Le délai est en millisecondes (2000 ms = 2 secondes)
+setInterval :
+
+La fonction setInterval est utilisée pour exécuter une fonction ou un morceau de code
+à intervalles réguliers, avec un intervalle spécifié en millisecondes.
+Elle prend également deux arguments : la fonction à exécuter et la durée de l'intervalle.
+La fonction spécifiée est ajoutée à la file d'attente des tâches à intervalles réguliers.
+Voici un exemple :
+javascript
+Copy code
+const intervalId = setInterval(() => {
+    console.log("Ce message s'affiche toutes les 3 secondes.");
+}, 3000); // L'intervalle est en millisecondes (3000 ms = 3 secondes)
+
+// Pour arrêter l'intervalle après un certain temps :
+setTimeout(() => {
+    clearInterval(intervalId);
+    console.log("L'intervalle s'est arrêté après 10 secondes.");
+}, 10000); // Arrête l'intervalle après 10 secondes 

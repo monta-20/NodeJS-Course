@@ -1,0 +1,48 @@
+lena bech nt3almou finction sendFile w eli hiya 3and page content mte7a bech tektbou
+fi page o5ra ba3d juste ta3mel route bel fonction sendFile.
+
+behi 
+1:
+res.sendFile('C:\Users\yaako\OneDrive\Bureau\Node JS\index.html) : lena mehich bech 
+ya9ra url 5ater In JavaScript, the backslash character \ is used as an escape character.
+
+donc solution hiya : 
+2:
+res.sendFile('C:\\Users\\yaako\\OneDrive\\Bureau\\Node JS\\index.html) : lena bech ye5dem
+jawou behi ama fama probléme eli kol système d'exploitation 3and caratére bech
+spérateur lein fi windows : \ fi Linux:/ w enti mechi donc probléme fi 7keyt multiplatforme ok
+
+RQ : __dirname : ta3tine lien mt3 file en cours d'exectuion 
+
+donc solution hiya : 
+3:
+jewou de développeur 5edmou module w men module hethika radou path multiplatforme
+w esm module : path 
+installation : npm i path 
+donc sol : 
+const path = require('path')
+res.sendFile(path.join(__dirname,'index.html')
+
+idea :
+
+path.join(part1, part2, ..., partn);
+part1, part2, ..., partn are the individual parts of the path that you want to join together.
+ma3neha ken index.html fi file views nweli nekteb : path.join(__dirname,'views,'index.html')
+
+Code : 
+index.html:
+<h1>Bonjour Mr Montassar BenBrahim</h1>
+server.js : 
+const express = require("express");
+const app = express();
+const path = require('path')
+
+app.get('/About',(req,res)=>{
+      res.sendFile(path.join(__dirname,'index.html'))
+})
+
+
+
+app.listen(5220,()=>{
+    console.log("Server is run")
+})

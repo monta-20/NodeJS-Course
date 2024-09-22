@@ -1,0 +1,19 @@
+a7na fi http server na3mlou res.write("..") w ba3d res.end("...") bech nab3thou 
+leken fi express na3mlou res.send("...") tekfi bech na3th response lel server
+
+this all code : 
+const express = require("express")
+
+const app = express()
+
+//midlewars
+
+app.use((req,res)=>{
+    res.send("Hello My Friend") //Hello My Friend / hiya eli nrawha fi page
+})
+
+
+
+app.listen(5220,()=>{
+    console.log("Server Running On Port 5220")
+})

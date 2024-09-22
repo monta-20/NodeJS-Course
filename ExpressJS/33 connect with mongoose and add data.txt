@@ -1,0 +1,42 @@
+mongoose plus utilisable men mongodb3le 5ater :
+.Validation des données : Mongoose permet de définir des schémas pour les données 
+ma3neha tnejem t7et type de chaque proprietes.
+.Facilité d'utilisation: Mongoose simplifie les opérations courantes 
+.Population de données: Mongoose prend en charge la "population" des données, ce qui
+signifie qu'il peut récupérer automatiquement des données liées à partir d'autres collections dans MongoDB.
+
+henou bech nfasrou code eli ketbou rahou juste bech ya3mel  connection w creation de 
+nouveaux document ok
+
+CODE :
+url="mongodb://localhost:27017"
+app.use('/',(req,res)=>{
+    mongosse.connect(url,{useNewUrlParser:true,useUnifiedTopology:true}).then //{useNewUrlParser:true,useUnifiedTopology:true} juste bech ina7i warnnig fi console
+    (res=>{
+        console.log("Connected !")
+        mongoose.disconnect()
+    })
+})
+
+app.get('/CreateFields',(req,res)=>{
+    var schemaStudent = mongoose.schema({
+        FirstName:String,
+        LastName:String,
+        Age:Number
+    })
+        var Student = mongoose.model('student',schemaStudent)  //création model ye5ou esem model w fields(schema) rahpu esem dima iji lowercase à la fin (s) donc bech ijina students
+
+        mongosse.connect(url,{useNewUrlParser:true,useUnifiedTopology:true}).then
+           (res=>{
+               let Std = new Student ({ //création nouveaux feilds
+                FirstName:"Montassar",
+                LastName:"Ben Brahim",
+                Age : 22
+               })
+               Std.save()
+               Student.insertMany({FirstName:"hehe",LastName:"ggh",Age:445}).then((res)=>{
+                console.log(res)
+                console.log("Inserted !")
+               }) //nejem n7ot object fi insertMany
+             })
+})

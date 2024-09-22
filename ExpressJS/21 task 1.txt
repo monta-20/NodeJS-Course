@@ -1,0 +1,6 @@
+Behi 3ml howa trois task bech ye7ki fih 3le mini-project 5thee object students 
+kima base de données ma3nehaa w ta3amel m3ahaa bech yab3th des request 3le
+browser
+
+just ma3loma men nejmoch na3thou HTTP delete 3le browser direct yelzemna 
+API w déja ista3mel Postman
